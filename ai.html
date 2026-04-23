@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="sq">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inteligjenca Artificiale</title>
+    <link rel="stylesheet" href="stil.css" />
+    <script
+      type="module"
+      src="https://unpkg.com/@google/model-viewer@latest/dist/model-viewer.min.js"
+    ></script>
+  </head>
+  <body>
+    <div class="cursor-glow"></div>
+    <canvas id="ai-bg"></canvas>
+    <header class="sub-hero ai-bg">
+      <nav class="navbar">
+        <div class="logo">Shkenca e së Ardhmes</div>
+        <div class="nav-links">
+          <div class="nav-item">
+            <a href="index.html">Ballina</a>
+          </div>
+          <div class="nav-item">
+            <a href="ai.html">Inteligjenca Artificiale</a>
+            <div class="nav-dropdown">
+              <a href="ai.html">Hyrje</a>
+              <a href="ai.html#ai-examples">Shembuj</a>
+              <a href="ai.html#ai-video">Video</a>
+            </div>
+          </div>
+          <div class="nav-item">
+            <a href="kimi.html">Eksperimente në Kimi</a>
+            <div class="nav-dropdown">
+              <a href="kimi.html">Hyrje</a>
+              <a href="kimi.html#kimia-experiment">Eksperimentet</a>
+              <a href="kimi.html#kimia-risks">Rreziqet</a>
+            </div>
+          </div>
+          <div class="nav-item">
+            <a href="fizike.html">Fizikë</a>
+            <div class="nav-dropdown">
+              <a href="fizike.html">Hyrje</a>
+              <a href="fizike.html#gas-ideal">Ligjet</a>
+              <a href="fizike.html#gas-model">Modeli 3D</a>
+            </div>
+          </div>
+          <div class="nav-item">
+            <a href="gjeo.html">Gjeografi</a>
+            <div class="nav-dropdown">
+              <a href="gjeo.html">Hyrje</a>
+              <a href="gjeo.html#solar-system">Sistemi Diellor</a>
+              <a href="gjeo.html#solar-3d">Modelet 3D</a>
+            </div>
+          </div>
+          <div class="nav-item">
+            <a href="matematike.html">Matematikë</a>
+            <div class="nav-dropdown">
+              <a href="matematike.html">Hyrje</a>
+              <a href="matematike.html#math-branches">Degët</a>
+              <a href="matematike.html#math-calculator">Kalkulatori</a>
+            </div>
+          </div>
+          <div class="nav-item">
+            <a href="Biologji.html">Biologji</a>
+            <div class="nav-dropdown">
+              <a href="Biologji.html">Hyrje</a>
+              <a href="Biologji.html#bio-branches">Tema</a>
+              <a href="Biologji.html#bio-dna">ADN</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div class="sub-hero-content">
+        <h1>Inteligjenca Artificiale</h1>
+        <p>Teknologjia që po ndryshon botën.</p>
+      </div>
+    </header>
+
+    <main>
+      <section class="section" id="ai-intro">
+        <h2>Çfarë është inteligjenca artificiale?</h2>
+        <p class="wide-text">
+          Inteligjenca artificiale është aftësia e kompjuterëve dhe programeve
+          që të kryejnë detyra që zakonisht kërkojnë inteligjencë njerëzore, si
+          njohja e zërit, analizimi i të dhënave, përkthimi i gjuhëve, njohja e
+          figurave dhe marrja e vendimeve të thjeshta. Sot, IA përdoret në
+          telefona, makina, robotë, spitale, shkolla dhe rrjete sociale.
+        </p>
+      </section>
+
+      <section class="section gallery-section">
+        <h2>Foto tematike</h2>
+        <div class="image-grid">
+          <img
+            src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=900&q=80"
+            alt="Robot dhe teknologji"
+          />
+          <img
+            src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=900&q=80"
+            alt="Robot inteligjent"
+          />
+          <img
+            src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80"
+            alt="Kodim dhe të dhëna"
+          />
+        </div>
+      </section>
+
+      <section class="section" id="ai-examples">
+        <h2>Shembuj interesantë të përdorimit të IA</h2>
+        <div class="cards">
+          <div class="card">
+            <h3>Asistentët virtualë</h3>
+            <p>
+              Programet si asistentët zanorë kuptojnë pyetje dhe japin përgjigje
+              të shpejta.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Mjekësia</h3>
+            <p>
+              IA ndihmon mjekët të analizojnë fotografi mjekësore dhe të
+              zbulojnë sëmundje më shpejt.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Arsimi</h3>
+            <p>
+              Platformat inteligjente mund t’i përshtatin ushtrimet sipas
+              nivelit të nxënësit.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section video-section" id="ai-video">
+        <h2>Video rreth Inteligjencës Artificiale</h2>
+        <div class="video-wrapper">
+          <iframe
+            src="https://www.youtube.com/embed/ad79nYk2keg"
+            title="Video për Inteligjencën Artificiale"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </section>
+
+      <section class="section highlight" id="ai-importance">
+        <h2>Pse është e rëndësishme për të rinjtë?</h2>
+        <p class="wide-text center-text">
+          Inteligjenca artificiale po bëhet pjesë e çdo profesioni. Të kuptosh
+          si funksionon IA do të jesh më i përgatitur për të ardhmen,
+          për universitetin dhe për tregun e punës.
+        </p>
+      </section>
+    </main>
+
+    <footer class="fixed-footer">
+      <p class="fixed-footer__text">
+        Gjimnazi natyror "Xhavit Ahmeti" - Gjilan
+      </p>
+      <p class="fixed-footer__text">
+        Punuar nga: Anuar Shaqiri - Olsi Sadiku - Artur Llapashtica - Norik
+        Zeqiri
+      </p>
+    </footer>
+    <script>
+      /* CURSOR GLOW */
+      const glow = document.querySelector(".cursor-glow");
+
+      document.addEventListener("mousemove", (e) => {
+        glow.style.left = e.clientX + "px";
+        glow.style.top = e.clientY + "px";
+      });
+
+      /* SIMPLE SCROLL REVEAL */
+      const sections = document.querySelectorAll(".section");
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("show");
+            }
+          });
+        },
+        { threshold: 0.15 },
+      );
+
+      sections.forEach((sec) => observer.observe(sec));
+
+      /* AI BACKGROUND PARTICLES */
+      const canvas = document.getElementById("ai-bg");
+      const ctx = canvas.getContext("2d");
+
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+
+      let particles = [];
+
+      for (let i = 0; i < 80; i++) {
+        particles.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          r: Math.random() * 2,
+          dx: (Math.random() - 0.5) * 0.6,
+          dy: (Math.random() - 0.5) * 0.6,
+        });
+      }
+      
+      function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        particles.forEach((p) => {
+          p.x += p.dx;
+          p.y += p.dy;
+
+          if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
+          if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fillStyle = "rgba(96,165,250,0.5)";
+          ctx.fill();
+        });
+
+        requestAnimationFrame(animate);
+      }
+
+      animate();
+    </script>
+    <script>
+      const cards = document.querySelectorAll(".card");
+
+      cards.forEach((card) => {
+        card.addEventListener("mousemove", (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
+
+          const rotateX = ((y - centerY) / centerY) * -10;
+          const rotateY = ((x - centerX) / centerX) * 10;
+
+          card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.03)`;
+        });
+
+        card.addEventListener("mouseleave", () => {
+          card.style.transform =
+            "perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)";
+        });
+      });
+    </script>
+  </body>
+</html>

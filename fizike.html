@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="sq">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fizikë</title>
+    <link rel="stylesheet" href="stil.css" />
+    <script
+      type="module"
+      src="https://unpkg.com/@google/model-viewer@latest/dist/model-viewer.min.js"
+    ></script>
+  </head>
+  <body>
+    <div class="cursor-glow"></div>
+    <canvas id="ai-bg"></canvas>
+    <header class="sub-hero ai-bg">
+      <nav class="navbar">
+        <div class="logo">Shkenca e së Ardhmes</div>
+        <div class="nav-links">
+          <div class="nav-item">
+            <a href="index.html">Ballina</a>
+          </div>
+          <div class="nav-item">
+            <a href="ai.html">Inteligjenca Artificiale</a>
+            <div class="nav-dropdown">
+              <a href="ai.html">Hyrje</a>
+              <a href="ai.html#ai-examples">Shembuj</a>
+              <a href="ai.html#ai-video">Video</a>
+            </div>
+          </div>
+          <div class="nav-item">
+            <a href="kimi.html">Eksperimente në Kimi</a>
+            <div class="nav-dropdown">
+              <a href="kimi.html">Hyrje</a>
+              <a href="kimi.html#kimia-experiment">Eksperimentet</a>
+              <a href="kimi.html#kimia-risks">Rreziqet</a>
+            </div>
+          </div>
+          <div class="nav-item">
+            <a href="fizike.html">Fizikë</a>
+            <div class="nav-dropdown">
+              <a href="fizike.html">Hyrje</a>
+              <a href="fizike.html#gas-ideal">Ligjet</a>
+              <a href="fizike.html#gas-model">Modeli 3D</a>
+            </div>
+          </div>
+          <div class="nav-item">
+            <a href="gjeo.html">Gjeografi</a>
+            <div class="nav-dropdown">
+              <a href="gjeo.html">Hyrje</a>
+              <a href="gjeo.html#solar-system">Sistemi Diellor</a>
+              <a href="gjeo.html#solar-3d">Modelet 3D</a>
+            </div>
+          </div>
+          <div class="nav-item">
+            <a href="matematike.html">Matematikë</a>
+            <div class="nav-dropdown">
+              <a href="matematike.html">Hyrje</a>
+              <a href="matematike.html#math-branches">Degët</a>
+              <a href="matematike.html#math-calculator">Kalkulatori</a>
+            </div>
+          </div>
+          <div class="nav-item">
+            <a href="Biologji.html">Biologji</a>
+            <div class="nav-dropdown">
+              <a href="Biologji.html">Hyrje</a>
+              <a href="Biologji.html#bio-branches">Tema</a>
+              <a href="Biologji.html#bio-dna">ADN</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div class="sub-hero-content">
+        <h1>Fizikë</h1>
+        <p>Shkenca e lëvizjes dhe forcave.</p>
+      </div>
+    </header>
+
+    <main>
+      <section class="section" id="physics-intro">
+        <h2>Ligjet e Gazeve Ideale</h2>
+        <p class="wide-text">
+          Ligjet e gazeve ideale përshkruajnë sjelljet e gazeve në kushte të
+          ndryshme. Këta ligje janë themelet për të kuptuar sjelljen e gazeve
+          dhe zbatohen në shumë aplikacione praktike.
+        </p>
+      </section>
+
+      <section class="section" id="gas-ideal">
+        <h2>Kuptimi i Gazit Ideal</h2>
+        <p class="wide-text">
+          Gazi ideal është një model ku molekulat goditen në mënyrë elastike dhe nuk ka forca ndërmolekulare. Shumë gaze reale i afrohen këtij modeli në kushte të caktuara.
+        </p>
+        <p class="wide-text">
+          <strong>Karakteristikat kryesore:</strong>
+        </p>
+        <ul style="margin-left: 2rem; max-width: 60rem">
+          <li>Shtypja (P)</li>
+          <li>Vëllimi (V)</li>
+          <li>Temperatura (T)</li>
+        </ul>
+      </section>
+
+      <section class="section model-viewer-section" id="gas-model">
+        <h2>Modeli 3D i Gjendjes së Gazit</h2>
+        <p class="wide-text">
+          Shikoni një përfaqësim vizual 3D të molekulave të gazit dhe si ato
+          lëvizin në hapësirë.
+        </p>
+        <model-viewer
+          src="./gas_state_of_matter.glb"
+          alt="Modeli 3D i gjendjes së gazit"
+          camera-controls
+          auto-rotate
+          ar
+          shadow-intensity="1"
+          exposure="1"
+          style="
+            width: 100%;
+            height: 500px;
+            border-radius: 16px;
+            margin: 2rem 0;
+          "
+        ></model-viewer>
+        <p
+          style="
+            text-align: center;
+            color: #cbd5f5;
+            font-size: 0.9em;
+            margin-top: 1rem;
+          "
+        >
+          Klikoni dhe tërhiqni për të eksploruar modelin 3D
+        </p>
+      </section>
+
+      <section class="section highlight">
+        <h2>Ligji i Gazit Ideal (Ekuacioni i Klapejronit)</h2>
+        <p class="wide-text">
+          Ky ligj lidh shtypjen, vëllimin, sasinë e substancës dhe temperaturën e gazit.
+        </p>
+        <p
+          class="wide-text"
+          style="text-align: center; font-weight: bold; margin: 1.5rem 0"
+        >
+          PV = nRT
+        </p>
+        <p class="wide-text">Ku:</p>
+        <ul style="margin-left: 2rem; max-width: 60rem">
+          <li><strong>P</strong> – Shtypja</li>
+          <li><strong>V</strong> – Vëllimi</li>
+          <li><strong>n</strong> – Sasia e substancës</li>
+          <li><strong>R</strong> – Konstanta e gazeve</li>
+          <li><strong>T</strong> – Temperatura</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Ligji i Bojl-Mariotit</h2>
+        <p class="wide-text">
+          Në temperaturë konstante, shtypja e gazit është e kundërt me vëllimin:
+          PV = const.
+        </p>
+      </section>
+
+      <section class="section">
+        <h2>Ligji i Gej-Lisakut</h2>
+        <p class="wide-text">
+          Në shtypje konstante, vëllimi i gazit rritet në mënyrë proporcionale me
+          temperaturën: V/T = const.
+        </p>
+      </section>
+
+      <section class="section">
+        <h2>Ligji i Sharlit (Ligjit i Amontonit)</h2>
+        <p class="wide-text">
+          Në vëllim konstant, shtypja e gazit rritet me temperaturën: P/T = const.
+        </p>
+      </section>
+
+      <section class="section highlight">
+        <h2>Parametrat e Gazit</h2>
+        <p class="wide-text">
+          Temperatura, shtypja, vëllimi dhe sasia e substancës janë parametrat kryesorë që përcaktojnë gjendjen e një gazi.
+        </p>
+      </section>
+
+      <section class="section" id="section2">
+        <h2>Përshkrimi i Aparaturës Eksperimentale</h2>
+        <p class="wide-text">
+          Për të studiuar ligjet e gazeve në laborator përdoret një sistem me
+          termostat, tub matës, merkuri dhe termometër. Këto elemente ndihmojnë
+          në matjen e ndryshimeve të temperaturës, shtypjes dhe vëllimit.
+        </p>
+        <ul style="margin-left: 2rem; max-width: 60rem">
+          <li><strong>Termostati</strong> – ruan temperaturën konstante</li>
+          <li><strong>Tubi matës</strong> – mat vëllimin e gazit</li>
+          <li><strong>Merkuri</strong> – tregon ndryshimet e shtypjes</li>
+          <li><strong>Termometri</strong> – kontrollon temperaturën</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Aparati Eksperimental</h2>
+        <p class="wide-text">
+          Për të verifikuar ligjet e gazeve përdoret aparaturë reale që tregon
+          sesi ndryshimet e vëllimit dhe temperaturës ndikojnë në shtypje.
+        </p>
+        <div style="margin-top: 2rem; text-align: center">
+          <img
+            src="diagram_page_7.png"
+            alt="Aparatura Eksperimentale"
+            style="
+              max-width: 100%;
+              height: auto;
+              border-radius: 8px;
+              box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            "
+          />
+          <p style="font-size: 0.9em; color: #cbd5f5; margin-top: 0.5rem">
+            Skema e aparaturës eksperimentale
+          </p>
+        </div>
+        <div style="margin-top: 2rem; text-align: center">
+          <img
+            src="diagram_page_9.png"
+            alt="Grafiku i Të Dhënave"
+            style="
+              max-width: 100%;
+              height: auto;
+              border-radius: 8px;
+              box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+              margin-top: 1rem;
+            "
+          />
+          <p style="font-size: 0.9em; color: #cbd5f5; margin-top: 0.5rem">
+            Të dhënat dhe rezultatet eksperimentale
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Grafikët e Ligjeve</h2>
+        <p class="wide-text">
+          Grafikët përmes të dhënave eksperimentale demonstrojnë marrëdhëniet
+          midis parametrave të gazit.
+        </p>
+        <div style="margin-top: 1.5rem; text-align: center">
+          <img
+            src="diagram_page_4.png"
+            alt="Grafikët e Ligjeve"
+            style="
+              max-width: 100%;
+              height: auto;
+              border-radius: 8px;
+              box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+              margin-bottom: 0.5rem;
+            "
+          />
+          <p style="font-size: 0.9em; color: #cbd5f5">
+            Ligji i Bojl-Mariotit (P-V)
+          </p>
+        </div>
+        <div style="margin-top: 1.5rem; text-align: center">
+          <img
+            src="diagram_page_5.png"
+            alt="Ligji i Gej-Lisakut"
+            style="
+              max-width: 100%;
+              height: auto;
+              border-radius: 8px;
+              box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+              margin-bottom: 0.5rem;
+            "
+          />
+          <p style="font-size: 0.9em; color: #cbd5f5">
+            Ligji i Gej-Lisakut (V-T)
+          </p>
+        </div>
+        <div style="margin-top: 1.5rem; text-align: center">
+          <img
+            src="diagram_page_6.png"
+            alt="Ligji i Sharlit"
+            style="
+              max-width: 100%;
+              height: auto;
+              border-radius: 8px;
+              box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+              margin-bottom: 0.5rem;
+            "
+          />
+          <p style="font-size: 0.9em; color: #cbd5f5">Ligji i Sharlit (P-T)</p>
+        </div>
+      </section>
+
+      <section class="section highlight">
+        <h2>Zbatimi Praktik i Ligjeve të Gazeve</h2>
+        <p class="wide-text">
+          Ligjet e gazeve përdoren në shumë teknologji të përditshme.
+        </p>
+        <ul style="margin-left: 2rem; max-width: 60rem">
+          <li><strong>Makinat me avull</strong> – funksionojnë me presion dhe vëllim.</li>
+          <li><strong>Klimatizimi</strong> – përdor relacionet mes temperaturës dhe vëllimit.</li>
+          <li><strong>Industria e gazeve</strong> – ruan dhe transporton gazra nën shtypje.</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="fixed-footer">
+      <p class="fixed-footer__text">
+        Gjimnazi natyror "Xhavit Ahmeti" - Gjilan
+      </p>
+      <p class="fixed-footer__text">
+        Punuar nga: Anuar Shaqiri - Olsi Sadiku - Artur Llapashtica - Norik
+        Zeqiri
+      </p>
+    </footer>
+    <script>
+      /* CURSOR GLOW */
+      const glow = document.querySelector(".cursor-glow");
+
+      document.addEventListener("mousemove", (e) => {
+        glow.style.left = e.clientX + "px";
+        glow.style.top = e.clientY + "px";
+      });
+
+      /* SIMPLE SCROLL REVEAL */
+      const sections = document.querySelectorAll(".section");
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("show");
+            }
+          });
+        },
+        { threshold: 0.15 },
+      );
+
+      sections.forEach((sec) => observer.observe(sec));
+
+      /* AI BACKGROUND PARTICLES */
+      const canvas = document.getElementById("ai-bg");
+      const ctx = canvas.getContext("2d");
+
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+
+      let particles = [];
+
+      for (let i = 0; i < 80; i++) {
+        particles.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          r: Math.random() * 2,
+          dx: (Math.random() - 0.5) * 0.6,
+          dy: (Math.random() - 0.5) * 0.6,
+        });
+      }
+
+      function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        particles.forEach((p) => {
+          p.x += p.dx;
+          p.y += p.dy;
+
+          if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
+          if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fillStyle = "rgba(96,165,250,0.5)";
+          ctx.fill();
+        });
+
+        requestAnimationFrame(animate);
+      }
+
+      animate();
+    </script>
+  </body>
+</html>

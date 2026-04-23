@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="sq">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inteligjenca Artificiale</title>
+    <link rel="stylesheet" href="stil.css" />
+  </head>
+  <body>
+    <div class="cursor-glow"></div>
+    <canvas id="ai-bg"></canvas>
+    <header class="sub-hero ai-bg">
+      <nav class="navbar">
+        <div class="logo">Shkenca e së Ardhmes</div>
+        <div class="nav-links">
+          <div class="nav-item">
+            <a href="index.html">Ballina</a>
+          </div>
+          <div class="nav-item">
+            <a href="ai.html">Inteligjenca Artificiale</a>
+            <div class="nav-dropdown">
+              <a href="ai.html">Hyrje</a>
+              <a href="ai.html#ai-examples">Shembuj</a>
+              <a href="ai.html#ai-video">Video</a>
+            </div>
+          </div>
+          <div class="nav-item">
+            <a href="kimi.html">Eksperimente në Kimi</a>
+            <div class="nav-dropdown">
+              <a href="kimi.html">Hyrje</a>
+              <a href="kimi.html#kimia-experiment">Eksperimentet</a>
+              <a href="kimi.html#kimia-risks">Rreziqet</a>
+            </div>
+          </div>
+          <div class="nav-item">
+            <a href="fizike.html">Fizikë</a>
+            <div class="nav-dropdown">
+              <a href="fizike.html">Hyrje</a>
+              <a href="fizike.html#gas-ideal">Ligjet</a>
+              <a href="fizike.html#gas-model">Modeli 3D</a>
+            </div>
+          </div>
+          <div class="nav-item">
+            <a href="gjeo.html">Gjeografi</a>
+            <div class="nav-dropdown">
+              <a href="gjeo.html">Hyrje</a>
+              <a href="gjeo.html#solar-system">Sistemi Diellor</a>
+              <a href="gjeo.html#solar-3d">Modelet 3D</a>
+            </div>
+          </div>
+          <div class="nav-item">
+            <a href="matematike.html">Matematikë</a>
+            <div class="nav-dropdown">
+              <a href="matematike.html">Hyrje</a>
+              <a href="matematike.html#math-branches">Degët</a>
+              <a href="matematike.html#math-calculator">Kalkulatori</a>
+            </div>
+          </div>
+          <div class="nav-item">
+            <a href="Biologji.html">Biologji</a>
+            <div class="nav-dropdown">
+              <a href="Biologji.html">Hyrje</a>
+              <a href="Biologji.html#bio-branches">Tema</a>
+              <a href="Biologji.html#bio-dna">ADN</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div class="sub-hero-content">
+        <h1>Mësimi i shkencave online</h1>
+        <p>Teknologjia po ndryshon botën.</p>
+      </div>
+    </header>
+    <footer class="fixed-footer">
+      <p class="fixed-footer__text">
+        Gjimnazi natyror "Xhavit Ahmeti" - Gjilan
+      </p>
+      <p class="fixed-footer__text">
+        Punuar nga: Anuar Shaqiri - Olsi Sadiku - Artur Llapashtica - Norik
+        Zeqiri
+      </p>
+    </footer>
+    <script>
+      /* CURSOR GLOW */
+      const glow = document.querySelector(".cursor-glow");
+
+      document.addEventListener("mousemove", (e) => {
+        glow.style.left = e.clientX + "px";
+        glow.style.top = e.clientY + "px";
+      });
+
+      /* AI BACKGROUND PARTICLES */
+      const canvas = document.getElementById("ai-bg");
+      const ctx = canvas.getContext("2d");
+
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+
+      let particles = [];
+
+      for (let i = 0; i < 80; i++) {
+        particles.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          r: Math.random() * 2,
+          dx: (Math.random() - 0.5) * 0.6,
+          dy: (Math.random() - 0.5) * 0.6,
+        });
+      }
+
+      function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        particles.forEach((p) => {
+          p.x += p.dx;
+          p.y += p.dy;
+
+          if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
+          if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fillStyle = "rgba(96,165,250,0.5)";
+          ctx.fill();
+        });
+
+        requestAnimationFrame(animate);
+      }
+
+      animate();
+    </script>
+  </body>
+</html>

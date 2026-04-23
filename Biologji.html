@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="sq">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Biologji</title>
+    <link rel="stylesheet" href="stil.css" />
+    <script type="module" src="https://unpkg.com/@google/model-viewer@latest/dist/model-viewer.min.js"></script>
+  </head>
+  <body>
+    <div class="cursor-glow"></div>
+    <canvas id="ai-bg"></canvas>
+    <header class="sub-hero ai-bg">
+      <nav class="navbar">
+        <div class="logo">Shkenca e së Ardhmes</div>
+        <div class="nav-links">
+          <div class="nav-item">
+            <a href="index.html">Ballina</a>
+          </div>
+          <div class="nav-item">
+            <a href="ai.html">Inteligjenca Artificiale</a>
+            <div class="nav-dropdown">
+              <a href="ai.html">Hyrje</a>
+              <a href="ai.html#ai-examples">Shembuj</a>
+              <a href="ai.html#ai-video">Video</a>
+            </div>
+          </div>
+          <div class="nav-item">
+            <a href="kimi.html">Eksperimente në Kimi</a>
+            <div class="nav-dropdown">
+              <a href="kimi.html">Hyrje</a>
+              <a href="kimi.html#kimia-experiment">Eksperimentet</a>
+              <a href="kimi.html#kimia-risks">Rreziqet</a>
+            </div>
+          </div>
+          <div class="nav-item">
+            <a href="fizike.html">Fizikë</a>
+            <div class="nav-dropdown">
+              <a href="fizike.html">Hyrje</a>
+              <a href="fizike.html#gas-ideal">Ligjet</a>
+              <a href="fizike.html#gas-model">Modeli 3D</a>
+            </div>
+          </div>
+          <div class="nav-item">
+            <a href="gjeo.html">Gjeografi</a>
+            <div class="nav-dropdown">
+              <a href="gjeo.html">Hyrje</a>
+              <a href="gjeo.html#solar-system">Sistemi Diellor</a>
+              <a href="gjeo.html#solar-3d">Modelet 3D</a>
+            </div>
+          </div>
+          <div class="nav-item">
+            <a href="matematike.html">Matematikë</a>
+            <div class="nav-dropdown">
+              <a href="matematike.html">Hyrje</a>
+              <a href="matematike.html#math-branches">Degët</a>
+              <a href="matematike.html#math-calculator">Kalkulatori</a>
+            </div>
+          </div>
+          <div class="nav-item">
+            <a href="Biologji.html">Biologji</a>
+            <div class="nav-dropdown">
+              <a href="Biologji.html">Hyrje</a>
+              <a href="Biologji.html#bio-branches">Tema</a>
+              <a href="Biologji.html#bio-dna">ADN</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div class="sub-hero-content">
+        <h1>Biologji</h1>
+        <p>Shkenca e jetës dhe organizmave.</p>
+      </div>
+    </header>
+
+    <main>
+      <section class="section" id="bio-intro">
+        <h2>Çfarë është biologja?</h2>
+        <p class="wide-text">
+          Biologja është shkenca e studimit të jetës dhe organizmave të gjallë.
+          Ajo mbulon të gjitha aspektet e jetës, nga celula më e vogël deri në
+          ekosistemet më të mëdha. Biologja na ndihmon të kuptojmë si funksionon
+          trupi njerëzor, si evoluojnë organizmat dhe si ndërveprojnë ata me
+          mjedisin e tyre.
+        </p>
+      </section>
+
+      <section class="section" id="bio-branches">
+        <h2>Degët kryesore të biologjisë</h2>
+        <div class="cards">
+          <div class="card">
+            <h3>Citologjia</h3>
+            <p>Studimi i strukturës dhe funksionimit të qelizave.</p>
+          </div>
+          <div class="card">
+            <h3>Gjenetika</h3>
+            <p>Studimi i trashëgimisë dhe variacionit të karakteristikave.</p>
+          </div>
+          <div class="card">
+            <h3>Ekologjia</h3>
+            <p>Studimi i marrëdhënieve ndërmjet organizmave dhe mjedisit.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section model-viewer-section" id="bio-nucleoid">
+        <h2>Modeli 3D i Nukleoidit</h2>
+        <model-viewer
+          src="./dna_nucleotide.glb"
+          alt="Modeli 3D i Nukleoidit"
+          camera-controls
+          auto-rotate
+          autoplay
+          ar
+          style="width:100%; max-width:900px; height:600px; margin:0 auto; display:block; border-radius:20px; background:#020617;"
+        ></model-viewer>
+        <p class="wide-text center-text">
+          Nukleoidi është zona në qelizat prokariote ku ndodhet ADN-ja. Ai nuk është i mbyllur në një bërthamë si te eukariotët, por është një rajon i organizuar brenda citoplazmës.
+        </p>
+      </section>
+
+      <section class="section model-viewer-section" id="bio-dna">
+        <h2>Modeli 3D i ADN-së</h2>
+        <model-viewer
+          src="./dna.glb"
+          alt="Modeli 3D i ADN-së"
+          camera-controls
+          auto-rotate
+          autoplay
+          ar
+          style="width:100%; max-width:900px; height:600px; margin:0 auto; display:block; border-radius:20px; background:#020617;"
+        ></model-viewer>
+        <p class="wide-text center-text">
+          ADN-ja (Deoksiribonukleik Acidi) është molekula që mbart informacionin gjenetik të organizmave. Ajo ka formën e një spirale të dyfishtë dhe përbëhet nga katër baza nitrogenike: adeninë, guaninë, citozinë dhe timinë.
+        </p>
+      </section>
+
+      <section class="section" id="bio-dna-info">
+        <h2>Çfarë është ADN-ja?</h2>
+        <p class="wide-text">
+          ADN-ja është materiali gjenetik që përcakton karakteristikat e një organizmi. Ajo është një polimer i gjatë i bërë nga njëmbëdhjetë nucleotide. Çdo nukleotid përbëhet nga një grup fosfat, një sheqer deoksiribozë dhe një nga katër bazat nitrogenike: adenina (A), guanina (G), citozina (C) dhe timina (T). Bazat A dhe T lidhen së bashku, ndërsa G dhe C lidhen së bashku, duke formuar çiftet bazë që mbajnë spirale të dyfishtë së bashku.
+          <br><br>
+          ADN-ja ndodhet në bërthamën e qelizave eukariote dhe në nukleoidin e qelizave prokariote. Ajo replikohet gjatë ndarjes qelizore dhe transmetohet nga prindërit tek fëmijët gjatë riprodhimit. ADN-ja është thelbësore për sintezën e proteinave dhe funksionimin e qelizave.
+        </p>
+      </section>
+
+      <section class="section highlight" id="bio-importance">
+        <h2>Pse është e rëndësishme biologja?</h2>
+        <p class="wide-text center-text">
+          Biologja na ndihmon të zgjidhim sfidat më të mëdha të njerëzimit, si
+          sëmundjet, ndryshimet klimatike dhe siguria ushqimore. Ajo është
+          themeli i mjekësisë moderne dhe bioteknologjisë.
+        </p>
+      </section>
+    </main>
+
+    <footer class="fixed-footer">
+      <p class="fixed-footer__text">
+        Gjimnazi natyror "Xhavit Ahmeti" - Gjilan
+      </p>
+      <p class="fixed-footer__text">
+        Punuar nga: Anuar Shaqiri - Olsi Sadiku - Artur Llapashtica - Norik
+        Zeqiri
+      </p>
+    </footer>
+    <script>
+      /* CURSOR GLOW */
+      const glow = document.querySelector(".cursor-glow");
+
+      document.addEventListener("mousemove", (e) => {
+        glow.style.left = e.clientX + "px";
+        glow.style.top = e.clientY + "px";
+      });
+
+      /* SIMPLE SCROLL REVEAL */
+      const sections = document.querySelectorAll(".section");
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("show");
+            }
+          });
+        },
+        { threshold: 0.15 },
+      );
+
+      sections.forEach((sec) => observer.observe(sec));
+
+      /* AI BACKGROUND PARTICLES */
+      const canvas = document.getElementById("ai-bg");
+      const ctx = canvas.getContext("2d");
+
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+
+      let particles = [];
+
+      for (let i = 0; i < 80; i++) {
+        particles.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          r: Math.random() * 2,
+          dx: (Math.random() - 0.5) * 0.6,
+          dy: (Math.random() - 0.5) * 0.6,
+        });
+      }
+
+      function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        particles.forEach((p) => {
+          p.x += p.dx;
+          p.y += p.dy;
+
+          if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
+          if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fillStyle = "rgba(96,165,250,0.5)";
+          ctx.fill();
+        });
+
+        requestAnimationFrame(animate);
+      }
+
+      animate();
+    </script>
+    <script>
+      const cards = document.querySelectorAll(".card");
+
+      cards.forEach((card) => {
+        card.addEventListener("mousemove", (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
+
+          const rotateX = ((y - centerY) / centerY) * -10;
+          const rotateY = ((x - centerX) / centerX) * 10;
+
+          card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
+        });
+
+        card.addEventListener("mouseleave", () => {
+          card.style.transform =
+            "perspective(1000px) rotateX(0) rotateY(0) scale(1)";
+        });
+      });
+    </script>
+  </body>
+</html>

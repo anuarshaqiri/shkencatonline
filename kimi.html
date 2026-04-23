@@ -1,0 +1,532 @@
+<!doctype html>
+<html lang="sq">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Përzierja e ngjyrave: RGB dhe CMY</title>
+    <link rel="stylesheet" href="stil.css" />
+    <style>
+      .wrap {
+        max-width: 1320px;
+        margin: auto;
+        padding: 12px 14px 18px;
+        position: relative;
+        z-index: 2;
+      }
+
+      .stage {
+        position: relative;
+        background: #fff;
+        border-radius: 18px;
+        padding: 8px;
+      }
+
+      .footerNote {
+        display: flex;
+        justify-content: center;
+        margin-top: 24px;
+      }
+
+      .footerBox {
+        background: #f8f9fb;
+        border-radius: 14px;
+        padding: 14px 26px;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+        text-align: center;
+        min-width: 320px;
+      }
+
+      .footerBox .school {
+        font-size: 20px;
+        font-weight: normal;
+        color: #111;
+        letter-spacing: 0.2px;
+      }
+
+      .footerBox .author {
+        margin-top: 5px;
+        font-size: 13px;
+        color: #666;
+      }
+
+      #mixCanvas {
+        display: block;
+        width: 100%;
+        max-width: 1220px;
+        aspect-ratio: 1220/640;
+        margin: auto;
+        background: #fff;
+        border-radius: 14px;
+        cursor: grab;
+        position: relative;
+        z-index: 2;
+      }
+
+      #mixCanvas.dragging {
+        cursor: grabbing;
+      }
+
+      .resetFloating {
+        position: absolute;
+        top: 34px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 5;
+        border: none;
+        cursor: pointer;
+        padding: 12px 18px;
+        border-radius: 12px;
+        font-size: 14px;
+        font-weight: 800;
+        background: #111;
+        color: #fff;
+        white-space: nowrap;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.16);
+      }
+
+      .resetFloating:hover {
+        opacity: 0.92;
+      }
+
+      @media (max-width: 700px) {
+        .resetFloating {
+          top: 20px;
+          padding: 10px 14px;
+          font-size: 13px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cursor-glow"></div>
+    <canvas id="ai-bg"></canvas>
+    <header class="sub-hero ai-bg">
+      <nav class="navbar">
+        <div class="logo">Shkenca e së Ardhmes</div>
+        <div class="nav-links">
+          <div class="nav-item">
+            <a href="index.html">Ballina</a>
+          </div>
+          <div class="nav-item">
+            <a href="ai.html">Inteligjenca Artificiale</a>
+            <div class="nav-dropdown">
+              <a href="ai.html">Hyrje</a>
+              <a href="ai.html#ai-examples">Shembuj</a>
+              <a href="ai.html#ai-video">Video</a>
+            </div>
+          </div>
+          <div class="nav-item">
+            <a href="kimi.html">Eksperimente në Kimi</a>
+            <div class="nav-dropdown">
+              <a href="kimi.html">Hyrje</a>
+              <a href="kimi.html#kimia-experiment">Eksperimentet</a>
+              <a href="kimi.html#kimia-risks">Rreziqet</a>
+            </div>
+          </div>
+          <div class="nav-item">
+            <a href="fizike.html">Fizikë</a>
+            <div class="nav-dropdown">
+              <a href="fizike.html">Hyrje</a>
+              <a href="fizike.html#gas-ideal">Ligjet</a>
+              <a href="fizike.html#gas-model">Modeli 3D</a>
+            </div>
+          </div>
+          <div class="nav-item">
+            <a href="gjeo.html">Gjeografi</a>
+            <div class="nav-dropdown">
+              <a href="gjeo.html">Hyrje</a>
+              <a href="gjeo.html#solar-system">Sistemi Diellor</a>
+              <a href="gjeo.html#solar-3d">Modelet 3D</a>
+            </div>
+          </div>
+          <div class="nav-item">
+            <a href="matematike.html">Matematikë</a>
+            <div class="nav-dropdown">
+              <a href="matematike.html">Hyrje</a>
+              <a href="matematike.html#math-branches">Degët</a>
+              <a href="matematike.html#math-calculator">Kalkulatori</a>
+            </div>
+          </div>
+          <div class="nav-item">
+            <a href="Biologji.html">Biologji</a>
+            <div class="nav-dropdown">
+              <a href="Biologji.html">Hyrje</a>
+              <a href="Biologji.html#bio-branches">Tema</a>
+              <a href="Biologji.html#bio-dna">ADN</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div class="sub-hero-content">
+        <h1>Eksperimente në Kimi</h1>
+        <p>Përzierja e ngjyrave: RGB dhe CMY</p>
+      </div>
+    </header>
+    <main>
+      <section class="section" id="kimia-intro">
+        <h2>Eksperimentet e përzierjes së ngjyrave</h2>
+        <p class="wide-text">
+          Ky eksperimenti demonstron se si përzierja e ngjyrave RGB krijon ngjyra të ndryshme CMY. Lëvizni elementët në ekran dhe shihni se si ndërlidhen ngjyrat në modelin vizual.
+        </p>
+      </section>
+
+      <div class="wrap" id="kimia-experiment">
+        <div class="stage">
+          <button id="resetBtn" class="resetFloating">Rivendos</button>
+          <canvas id="mixCanvas" width="1220" height="640"></canvas>
+        </div>
+      </div>
+
+      <section class="section" id="kimia-risks">
+        <h2>Rreziqet</h2>
+        <p class="wide-text">
+          Eksperimentet kimike duhen kryer me kujdes. Këto modele janë të sigurta për shfletuesin, por në laborator përdorni doreza, syze mbrojtëse dhe ndiqni udhëzimet e mësuesit.
+        </p>
+      </section>
+    </main>
+    <script>
+      /* CURSOR GLOW */
+      const glow = document.querySelector(".cursor-glow");
+
+      document.addEventListener("mousemove", (e) => {
+        glow.style.left = e.clientX + "px";
+        glow.style.top = e.clientY + "px";
+      });
+
+      /* AI BACKGROUND PARTICLES */
+      const bgCanvas = document.getElementById("ai-bg"); // ✅ renamed
+      const bgCtx = bgCanvas.getContext("2d"); // ✅ renamed
+
+      bgCanvas.width = window.innerWidth;
+      bgCanvas.height = window.innerHeight;
+
+      let particles = [];
+
+      for (let i = 0; i < 80; i++) {
+        particles.push({
+          x: Math.random() * bgCanvas.width,
+          y: Math.random() * bgCanvas.height,
+          r: Math.random() * 2,
+          dx: (Math.random() - 0.5) * 0.6,
+          dy: (Math.random() - 0.5) * 0.6,
+        });
+      }
+
+      function animate() {
+        bgCtx.clearRect(0, 0, bgCanvas.width, bgCanvas.height);
+
+        particles.forEach((p) => {
+          p.x += p.dx;
+          p.y += p.dy;
+
+          if (p.x < 0 || p.x > bgCanvas.width) p.dx *= -1;
+          if (p.y < 0 || p.y > bgCanvas.height) p.dy *= -1;
+
+          bgCtx.beginPath();
+          bgCtx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          bgCtx.fillStyle = "rgba(96,165,250,0.5)";
+          bgCtx.fill();
+        });
+
+        requestAnimationFrame(animate);
+      }
+
+      animate();
+    </script>
+
+    <script>
+      const canvas = document.getElementById("mixCanvas");
+      const ctx = canvas.getContext("2d");
+
+      const rgbInputs = [
+        { value: "#ff0000" },
+        { value: "#00ff00" },
+        { value: "#0000ff" },
+      ];
+
+      const cmyInputs = [
+        { value: "#00ffff" },
+        { value: "#ff00ff" },
+        { value: "#ffff00" },
+      ];
+
+      function clamp(v, min, max) {
+        return Math.max(min, Math.min(max, v));
+      }
+
+      function hexToRgb(hex) {
+        const clean = hex.replace("#", "");
+        return {
+          r: parseInt(clean.slice(0, 2), 16),
+          g: parseInt(clean.slice(2, 4), 16),
+          b: parseInt(clean.slice(4, 6), 16),
+        };
+      }
+
+      function drawTitle(text, x, y) {
+        ctx.save();
+        ctx.fillStyle = "#111";
+        ctx.font = "bold 28px Arial";
+        ctx.textAlign = "center";
+        ctx.fillText(text, x, y);
+        ctx.restore();
+      }
+
+      const leftGroup = [
+        { x: 240, y: 230, r: 105, input: rgbInputs[0] },
+        { x: 110, y: 480, r: 105, input: rgbInputs[1] },
+        { x: 370, y: 480, r: 105, input: rgbInputs[2] },
+      ];
+
+      const rightGroup = [
+        { x: 980, y: 230, r: 105, input: cmyInputs[0] },
+        { x: 850, y: 480, r: 105, input: cmyInputs[1] },
+        { x: 1110, y: 480, r: 105, input: cmyInputs[2] },
+      ];
+
+      const initialPositions = {
+        left: [
+          { x: 240, y: 170 },
+          { x: 110, y: 420 },
+          { x: 370, y: 420 },
+        ],
+        right: [
+          { x: 980, y: 170 },
+          { x: 850, y: 420 },
+          { x: 1110, y: 420 },
+        ],
+      };
+
+      let dragging = null;
+
+      function drawCirclePath(circle) {
+        ctx.beginPath();
+        ctx.arc(circle.x, circle.y, circle.r, 0, Math.PI * 2);
+      }
+
+      function drawOutline(circle, color = "rgba(0,0,0,0.10)", width = 1) {
+        drawCirclePath(circle);
+        ctx.strokeStyle = color;
+        ctx.lineWidth = width;
+        ctx.stroke();
+      }
+
+      function renderRGB() {
+        const off = document.createElement("canvas");
+        off.width = canvas.width;
+        off.height = canvas.height;
+        const octx = off.getContext("2d");
+
+        octx.clearRect(0, 0, off.width, off.height);
+        octx.globalCompositeOperation = "lighter";
+
+        leftGroup.forEach((circle) => {
+          const c = hexToRgb(circle.input.value);
+          octx.beginPath();
+          octx.arc(circle.x, circle.y, circle.r, 0, Math.PI * 2);
+          octx.fillStyle = `rgb(${c.r},${c.g},${c.b})`;
+          octx.fill();
+        });
+
+        ctx.drawImage(off, 0, 0);
+
+        leftGroup.forEach((circle) => {
+          drawOutline(circle, "rgba(150,150,150,0.28)", 1.4);
+        });
+      }
+
+      function renderCMY() {
+        ctx.save();
+        ctx.globalCompositeOperation = "multiply";
+
+        rightGroup.forEach((circle) => {
+          const c = hexToRgb(circle.input.value);
+          drawCirclePath(circle);
+          ctx.fillStyle = `rgb(${c.r},${c.g},${c.b})`;
+          ctx.fill();
+        });
+
+        ctx.restore();
+
+        rightGroup.forEach((circle) => {
+          drawOutline(circle, "rgba(0,0,0,0.10)", 1);
+        });
+      }
+
+      function render() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        ctx.fillStyle = "#ffffff";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        drawTitle("RGB aditiv", 240, 48);
+        drawTitle("CMY subtraktiv", 980, 48);
+
+        renderRGB();
+        renderCMY();
+      }
+
+      function getPos(evt) {
+        const rect = canvas.getBoundingClientRect();
+        const scaleX = canvas.width / rect.width;
+        const scaleY = canvas.height / rect.height;
+        return {
+          x: (evt.clientX - rect.left) * scaleX,
+          y: (evt.clientY - rect.top) * scaleY,
+        };
+      }
+
+      function getTouchPos(touch) {
+        const rect = canvas.getBoundingClientRect();
+        const scaleX = canvas.width / rect.width;
+        const scaleY = canvas.height / rect.height;
+        return {
+          x: (touch.clientX - rect.left) * scaleX,
+          y: (touch.clientY - rect.top) * scaleY,
+        };
+      }
+
+      function hitTest(x, y) {
+        const all = [
+          ...leftGroup.map((c, i) => ({ group: "left", index: i, c })),
+          ...rightGroup.map((c, i) => ({ group: "right", index: i, c })),
+        ];
+
+        for (let i = all.length - 1; i >= 0; i--) {
+          const item = all[i];
+          const dx = x - item.c.x;
+          const dy = y - item.c.y;
+          if (dx * dx + dy * dy <= item.c.r * item.c.r) {
+            return {
+              group: item.group,
+              index: item.index,
+              offsetX: x - item.c.x,
+              offsetY: y - item.c.y,
+            };
+          }
+        }
+        return null;
+      }
+
+      function boundsFor(groupName, circle) {
+        if (groupName === "left") {
+          return {
+            minX: 20 + circle.r,
+            maxX: 560 - circle.r,
+            minY: 70 + circle.r,
+            maxY: 620 - circle.r,
+          };
+        }
+        return {
+          minX: 660 + circle.r,
+          maxX: 1200 - circle.r,
+          minY: 70 + circle.r,
+          maxY: 620 - circle.r,
+        };
+      }
+
+      canvas.addEventListener("mousedown", (e) => {
+        const p = getPos(e);
+        dragging = hitTest(p.x, p.y);
+        if (dragging) canvas.classList.add("dragging");
+      });
+
+      window.addEventListener("mousemove", (e) => {
+        if (!dragging) return;
+
+        const p = getPos(e);
+        const group = dragging.group === "left" ? leftGroup : rightGroup;
+        const circle = group[dragging.index];
+        const b = boundsFor(dragging.group, circle);
+
+        circle.x = clamp(p.x - dragging.offsetX, b.minX, b.maxX);
+        circle.y = clamp(p.y - dragging.offsetY, b.minY, b.maxY);
+
+        render();
+      });
+
+      window.addEventListener("mouseup", () => {
+        dragging = null;
+        canvas.classList.remove("dragging");
+      });
+
+      canvas.addEventListener(
+        "touchstart",
+        (e) => {
+          const t = e.touches[0];
+          if (!t) return;
+          const p = getTouchPos(t);
+          dragging = hitTest(p.x, p.y);
+          if (dragging) canvas.classList.add("dragging");
+        },
+        { passive: true },
+      );
+
+      window.addEventListener(
+        "touchmove",
+        (e) => {
+          if (!dragging) return;
+
+          const t = e.touches[0];
+          if (!t) return;
+          const p = getTouchPos(t);
+          const group = dragging.group === "left" ? leftGroup : rightGroup;
+          const circle = group[dragging.index];
+          const b = boundsFor(dragging.group, circle);
+
+          circle.x = clamp(p.x - dragging.offsetX, b.minX, b.maxX);
+          circle.y = clamp(p.y - dragging.offsetY, b.minY, b.maxY);
+
+          render();
+        },
+        { passive: true },
+      );
+
+      window.addEventListener("touchend", () => {
+        dragging = null;
+        canvas.classList.remove("dragging");
+      });
+
+      function spreadCircles() {
+        leftGroup[0].x = initialPositions.left[0].x;
+        leftGroup[0].y = initialPositions.left[0].y;
+        leftGroup[1].x = initialPositions.left[1].x;
+        leftGroup[1].y = initialPositions.left[1].y;
+        leftGroup[2].x = initialPositions.left[2].x;
+        leftGroup[2].y = initialPositions.left[2].y;
+
+        rightGroup[0].x = initialPositions.right[0].x;
+        rightGroup[0].y = initialPositions.right[0].y;
+        rightGroup[1].x = initialPositions.right[1].x;
+        rightGroup[1].y = initialPositions.right[1].y;
+        rightGroup[2].x = initialPositions.right[2].x;
+        rightGroup[2].y = initialPositions.right[2].y;
+
+        render();
+      }
+
+      document.getElementById("resetBtn").addEventListener("click", () => {
+        rgbInputs[0].value = "#ff0000";
+        rgbInputs[1].value = "#00ff00";
+        rgbInputs[2].value = "#0000ff";
+
+        cmyInputs[0].value = "#00ffff";
+        cmyInputs[1].value = "#ff00ff";
+        cmyInputs[2].value = "#ffff00";
+
+        spreadCircles();
+      });
+
+      render();
+    </script>
+    <footer class="fixed-footer">
+      <p class="fixed-footer__text">
+        Gjimnazi natyror "Xhavit Ahmeti" - Gjilan
+      </p>
+      <p class="fixed-footer__text">
+        Punuar nga: Anuar Shaqiri - Olsi Sadiku - Artur Llapashtica - Norik
+        Zeqiri
+      </p>
+    </footer>
+  </body>
+</html>

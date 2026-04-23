@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="sq">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gjeografi</title>
+    <link rel="stylesheet" href="stil.css" />
+    <script
+      type="module"
+      src="https://unpkg.com/@google/model-viewer@latest/dist/model-viewer.min.js"
+    ></script>
+  </head>
+  <body>
+    <div class="cursor-glow"></div>
+    <canvas id="ai-bg"></canvas>
+    <header class="sub-hero ai-bg">
+      <nav class="navbar">
+        <div class="logo">Shkenca e së Ardhmes</div>
+        <div class="nav-links">
+          <div class="nav-item">
+            <a href="index.html">Ballina</a>
+          </div>
+          <div class="nav-item">
+            <a href="ai.html">Inteligjenca Artificiale</a>
+            <div class="nav-dropdown">
+              <a href="ai.html">Hyrje</a>
+              <a href="ai.html#ai-examples">Shembuj</a>
+              <a href="ai.html#ai-video">Video</a>
+            </div>
+          </div>
+          <div class="nav-item">
+            <a href="kimi.html">Eksperimente në Kimi</a>
+            <div class="nav-dropdown">
+              <a href="kimi.html">Hyrje</a>
+              <a href="kimi.html#kimia-experiment">Eksperimentet</a>
+              <a href="kimi.html#kimia-risks">Rreziqet</a>
+            </div>
+          </div>
+          <div class="nav-item">
+            <a href="fizike.html">Fizikë</a>
+            <div class="nav-dropdown">
+              <a href="fizike.html">Hyrje</a>
+              <a href="fizike.html#gas-ideal">Ligjet</a>
+              <a href="fizike.html#gas-model">Modeli 3D</a>
+            </div>
+          </div>
+          <div class="nav-item">
+            <a href="gjeo.html">Gjeografi</a>
+            <div class="nav-dropdown">
+              <a href="gjeo.html">Hyrje</a>
+              <a href="gjeo.html#solar-system">Sistemi Diellor</a>
+              <a href="gjeo.html#solar-3d">Modelet 3D</a>
+            </div>
+          </div>
+          <div class="nav-item">
+            <a href="matematike.html">Matematikë</a>
+            <div class="nav-dropdown">
+              <a href="matematike.html">Hyrje</a>
+              <a href="matematike.html#math-branches">Degët</a>
+              <a href="matematike.html#math-calculator">Kalkulatori</a>
+            </div>
+          </div>
+          <div class="nav-item">
+            <a href="Biologji.html">Biologji</a>
+            <div class="nav-dropdown">
+              <a href="Biologji.html">Hyrje</a>
+              <a href="Biologji.html#bio-branches">Tema</a>
+              <a href="Biologji.html#bio-dna">ADN</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div class="sub-hero-content">
+        <h1>Gjeografi</h1>
+        <p>Planetet dhe universi në 3D.</p>
+      </div>
+    </header>
+
+    <main>
+      <section class="section" id="solar-system">
+        <h2>Sistemi Diellor Ynë</h2>
+        <p class="wide-text">
+          Sistemi Diellor përbëhet nga Dielli, tetë planetë, hënat e tyre dhe
+          objekte të tjera të ndryshme qiellore. Dielli ndodhet në qendër dhe
+          është rreth 99.86% e masës totale të sistemit Diellor. Tetë planetët
+          në rendin e distancës nga Dielli janë: Merkuri, Venusi, Toka, Marsi,
+          Jupiteri, Saturni, Uranu dhe Neptuni.
+        </p>
+      </section>
+
+      <section class="section model-viewer-section" id="solar-3d">
+        <h2>Modeli 3D i Sistemit Diellor</h2>
+        <model-viewer
+          src="./solar_system_animation.glb"
+          alt="Modeli 3D i sistemit diellor"
+          camera-controls
+          auto-rotate
+          autoplay
+          ar
+          style="
+            width: 100%;
+            max-width: 900px;
+            height: 600px;
+            margin: 0 auto;
+            display: block;
+            border-radius: 20px;
+            background: #020617;
+          "
+        ></model-viewer>
+        <p class="wide-text center-text">
+          Kliko dhe përdor miun ose prek ekranin për të rrotulluar dhe shikuar
+          sistemin diellor në 3D.
+        </p>
+        <div class="model-info">
+          <h3>Informacione shtesë për Sistemin Diellor:</h3>
+          <ul>
+            <li>Dielli është në qendër dhe përbën 99.86% të masës totale.</li>
+            <li>
+              Tetë planetët: Merkuri, Venusi, Toka, Marsi, Jupiteri, Saturni,
+              Uranu dhe Neptuni.
+            </li>
+            <li>Jupiteri është planeti më i madh, me rreth 79 hëna.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Planetët Magjikë</h2>
+        <div class="cards">
+          <div class="card">
+            <h3>Merkuri</h3>
+            <p>
+              Planeti më i afërt me Diellin, shumë i nxehtë gjatë ditës dhe
+              shumë i ftohtë gjatë natës.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Venusi</h3>
+            <p>
+              Planeti më i nxehtë në sistemin Diellor me një atmosferë shumë të
+              trashë dhe presioni shumë të lartë.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Toka</h3>
+            <p>
+              Planeti i vetëm i njohur që ka jetë. Mund të jemi ndryshe, edhe i
+              vetmi mik i lirisë.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section model-viewer-section">
+        <h2>Toka-Hëna-Dielli 3D</h2>
+        <model-viewer
+          src="./earth-moon-sun.glb"
+          alt="Modeli 3D i Tokës, Hënës dhe Diellit"
+          camera-controls
+          auto-rotate
+          autoplay
+          ar
+          style="
+            width: 100%;
+            max-width: 900px;
+            height: 600px;
+            margin: 0 auto;
+            display: block;
+            border-radius: 20px;
+            background: #020617;
+          "
+        ></model-viewer>
+        <p class="wide-text center-text">
+          Një model interaktiv i marrëdhënies ndërmjet Tokës, Hënës dhe Diellit.
+          Kliko dhe rrotullo për të eksploruar.
+        </p>
+        <div class="model-info">
+          <h3>Informacione shtesë për Tokën, Hënën dhe Diellin:</h3>
+          <ul>
+            <li>
+              Hëna orbiton rreth Tokës çdo 27.3 ditë dhe shkakton fazat dhe
+              dallgët.
+            </li>
+            <li>
+              Eklipsi diellor dhe hënor ndodhin kur planetët janë në linjë.
+            </li>
+            <li>
+              Rrotullimi i Tokës shkakton ditën dhe natën, ndërsa orbita stinët.
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section model-viewer-section">
+        <h2>Bërthama e Tokës 3D</h2>
+        <model-viewer
+          src="./earth_core_v2.glb"
+          alt="Modeli 3D i bërthames së Tokës"
+          camera-controls
+          auto-rotate
+          autoplay
+          ar
+          style="
+            width: 100%;
+            max-width: 900px;
+            height: 600px;
+            margin: 0 auto;
+            display: block;
+            border-radius: 20px;
+            background: #020617;
+          "
+        ></model-viewer>
+        <p class="wide-text center-text">
+          Modeli i thellësisë së Tokës dhe bërthamës së saj. Kliko dhe rrotullo
+          për të parë brendësinë e planetit.
+        </p>
+        <div class="model-info">
+          <h3>Informacione shtesë për Bërthamën e Tokës:</h3>
+          <ul>
+            <li>
+              Bërthama e jashtme është e lëngshme dhe gjeneron fushën magnetike.
+            </li>
+            <li>
+              Bërthama e brendshme është e ngurtë dhe bërë nga hekur dhe nikeli.
+            </li>
+            <li>Temperatura rritet me thellësi deri në 6,000°C.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section model-viewer-section">
+        <h2>Modeli i ekuinoksit dhe solsticit 3D</h2>
+        <model-viewer
+          src="./summer_solstice.glb"
+          alt="Modeli 3D i Summer Solstice"
+          camera-controls
+          auto-rotate
+          autoplay
+          ar
+          style="
+            width: 100%;
+            max-width: 900px;
+            height: 600px;
+            margin: 0 auto;
+            display: block;
+            border-radius: 20px;
+            background: #020617;
+          "
+        ></model-viewer>
+        <p class="wide-text center-text">
+          Modeli i ekuinoksit dhe solsticit. Kliko dhe rrotullo për të parë
+          pozicionin e Tokës ndaj Diellit gjatë vitit.
+        </p>
+        <div class="model-info">
+          <h3>Informacione shtesë për Ekuinoksin dhe Solsticin:</h3>
+          <ul>
+            <li>
+              Ekuinoksi: Ditë dhe natë të barabarta, ndodh në mars dhe shtator.
+            </li>
+            <li>Solstici veror: Dita më e gjatë, rreth 21 qershorit.</li>
+            <li>Solstici dimëror: Nata më e gjatë, rreth 21 dhjetorit.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section model-viewer-section">
+        <h2>Modeli 3D i Vullkanit</h2>
+        <model-viewer
+          src="./free__volcano_low_poly.glb"
+          alt="Modeli 3D i vullkanit"
+          camera-controls
+          auto-rotate
+          autoplay
+          ar
+          style="
+            width: 100%;
+            max-width: 900px;
+            height: 600px;
+            margin: 0 auto;
+            display: block;
+            border-radius: 20px;
+            background: #020617;
+          "
+        ></model-viewer>
+        <p class="wide-text center-text">
+          Modeli 3D i një vullkani. Kliko dhe rrotullo për të eksploruar
+          strukturën e tij.
+        </p>
+        <div class="model-info">
+          <h3>Informacione shtesë për Vullkanët:</h3>
+          <ul>
+            <li>Vullkanët shpërthejnë lavë dhe gazra nga brendësia e Tokës.</li>
+            <li>Ato ndodhen zakonisht në skajet e pllakave tektonike.</li>
+            <li>
+              Shpërthimet mund të jenë të rrezikshme por edhe të dobishme për
+              tokën.
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section highlight">
+        <h2>Pse studimi i sistemit Diellor është i rëndësishëm?</h2>
+        <p class="wide-text center-text">
+          Përmes studimit të sistemit Diellor, ne mësojmë për origjinën e
+          universit, për natyrën e planetëve, dhe për mundësinë e jetës jashtë
+          Tokës. Është një rrugë madhore drejt përfaqësimit të botës sonë
+          kozmike.
+        </p>
+      </section>
+    </main>
+
+    <footer class="fixed-footer">
+      <p class="fixed-footer__text">
+        Gjimnazi natyror "Xhavit Ahmeti" - Gjilan
+      </p>
+      <p class="fixed-footer__text">
+        Punuar nga: Anuar Shaqiri - Olsi Sadiku - Artur Llapashtica - Norik
+        Zeqiri
+      </p>
+    </footer>
+    <script>
+      /* CURSOR GLOW */
+      const glow = document.querySelector(".cursor-glow");
+
+      document.addEventListener("mousemove", (e) => {
+        glow.style.left = e.clientX + "px";
+        glow.style.top = e.clientY + "px";
+      });
+
+      /* SIMPLE SCROLL REVEAL */
+      const sections = document.querySelectorAll(".section");
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("show");
+            }
+          });
+        },
+        { threshold: 0.15 },
+      );
+
+      sections.forEach((sec) => observer.observe(sec));
+
+      /* AI BACKGROUND PARTICLES */
+      const canvas = document.getElementById("ai-bg");
+      const ctx = canvas.getContext("2d");
+
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+
+      let particles = [];
+
+      for (let i = 0; i < 80; i++) {
+        particles.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          r: Math.random() * 2,
+          dx: (Math.random() - 0.5) * 0.6,
+          dy: (Math.random() - 0.5) * 0.6,
+        });
+      }
+
+      function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        particles.forEach((p) => {
+          p.x += p.dx;
+          p.y += p.dy;
+
+          if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
+          if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fillStyle = "rgba(96,165,250,0.5)";
+          ctx.fill();
+        });
+
+        requestAnimationFrame(animate);
+      }
+
+      animate();
+    </script>
+    <script>
+      const cards = document.querySelectorAll(".card");
+
+      cards.forEach((card) => {
+        card.addEventListener("mousemove", (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
+
+          const rotateX = ((y - centerY) / centerY) * -10;
+          const rotateY = ((x - centerX) / centerX) * 10;
+
+          card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.03)`;
+        });
+
+        card.addEventListener("mouseleave", () => {
+          card.style.transform =
+            "perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)";
+        });
+      });
+    </script>
+  </body>
+</html>

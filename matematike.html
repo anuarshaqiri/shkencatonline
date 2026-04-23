@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="sq">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Matematikë</title>
+    <link rel="stylesheet" href="stil.css" />
+    <style>
+      .calculator {
+        max-width: 400px;
+        margin: 0 auto;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+      }
+      #display {
+        width: 100%;
+        height: 50px;
+        font-size: 24px;
+        text-align: right;
+        margin-bottom: 10px;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        background: rgba(255, 255, 255, 0.9);
+        color: #333;
+      }
+      .buttons {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+      }
+      .buttons button {
+        height: 50px;
+        font-size: 18px;
+        border: none;
+        border-radius: 5px;
+        background: rgba(96, 165, 250, 0.8);
+        color: white;
+        cursor: pointer;rw 
+        transition: background 0.3s;
+      }
+      .buttons button:hover {
+        background: rgba(96, 165, 250, 1);
+      }
+    </style>
+    <script
+      type="module"
+      src="https://unpkg.com/@google/model-viewer@latest/dist/model-viewer.min.js"
+    ></script>
+  </head>
+  <body>
+    <div class="cursor-glow"></div>
+    <canvas id="ai-bg"></canvas>
+    <header class="sub-hero ai-bg">
+      <nav class="navbar">
+        <div class="logo">Shkenca e së Ardhmes</div>
+        <div class="nav-links">
+          <div class="nav-item">
+            <a href="index.html">Ballina</a>
+          </div>
+          <div class="nav-item">
+            <a href="ai.html">Inteligjenca Artificiale</a>
+            <div class="nav-dropdown">
+              <a href="ai.html">Hyrje</a>
+              <a href="ai.html#ai-examples">Shembuj</a>
+              <a href="ai.html#ai-video">Video</a>
+            </div>
+          </div>
+          <div class="nav-item">
+            <a href="kimi.html">Eksperimente në Kimi</a>
+            <div class="nav-dropdown">
+              <a href="kimi.html">Hyrje</a>
+              <a href="kimi.html#kimia-experiment">Eksperimentet</a>
+              <a href="kimi.html#kimia-risks">Rreziqet</a>
+            </div>
+          </div>
+          <div class="nav-item">
+            <a href="fizike.html">Fizikë</a>
+            <div class="nav-dropdown">
+              <a href="fizike.html">Hyrje</a>
+              <a href="fizike.html#gas-ideal">Ligjet</a>
+              <a href="fizike.html#gas-model">Modeli 3D</a>
+            </div>
+          </div>
+          <div class="nav-item">
+            <a href="gjeo.html">Gjeografi</a>
+            <div class="nav-dropdown">
+              <a href="gjeo.html">Hyrje</a>
+              <a href="gjeo.html#solar-system">Sistemi Diellor</a>
+              <a href="gjeo.html#solar-3d">Modelet 3D</a>
+            </div>
+          </div>
+          <div class="nav-item">
+            <a href="matematike.html">Matematikë</a>
+            <div class="nav-dropdown">
+              <a href="matematike.html">Hyrje</a>
+              <a href="matematike.html#math-branches">Degët</a>
+              <a href="matematike.html#math-calculator">Kalkulatori</a>
+            </div>
+          </div>
+          <div class="nav-item">
+            <a href="Biologji.html">Biologji</a>
+            <div class="nav-dropdown">
+              <a href="Biologji.html">Hyrje</a>
+              <a href="Biologji.html#bio-branches">Tema</a>
+              <a href="Biologji.html#bio-dna">ADN</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div class="sub-hero-content">
+        <h1>Matematikë</h1>
+        <p>Shkenca e numrave dhe logjikës.</p>
+      </div>
+    </header>
+
+    <main>
+      <section class="section" id="math-intro">
+        <h2>Çfarë është matematika?</h2>
+        <p class="wide-text">
+          Matematika është shkenca e studimit të numrave, formave, hapësirave
+          dhe marrëdhënieve midis tyre. Ajo është baza për shumë fusha të tjera
+          si fizika, inxhinieria dhe ekonomia. Matematika ndihmon në zgjidhjen e
+          problemeve të përditshme dhe zhvillimin e teknologjisë.
+        </p>
+      </section>
+
+      <section class="section gallery-section">
+        <h2>Foto tematike</h2>
+        <div class="image-grid">
+          <img
+            src="https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&w=900&q=80"
+            alt="Formula matematike"
+          />
+          <img
+            src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80"
+            alt="Grafikë dhe numra"
+          />
+          <img
+            src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=900&q=80"
+            alt="Gjeometri dhe forma"
+          />
+        </div>
+      </section>
+
+      <section class="section" id="math-branches">
+        <h2>Disa degë të matematikës</h2>
+        <div class="cards">
+          <div class="card">
+            <h3>Algjebra</h3>
+            <p>Studimi i struktura matematikore dhe operacioneve midis tyre.</p>
+          </div>
+          <div class="card">
+            <h3>Gjeometria</h3>
+            <p>Studimi i formave, madhësive dhe vetive të hapësirës.</p>
+          </div>
+          <div class="card">
+            <h3>Analiza Matematike</h3>
+            <p>Studimi i limiteve, derivimeve dhe integraleve.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="math-calculator">
+        <h2>Llogaritësi i Avancuar</h2>
+        <div class="calculator-embed" style="display:flex; justify-content:center;">
+          <iframe
+            src="./Scientific-Calculator-main/index.html"
+            title="Kalkulator Shkencor"
+            frameborder="0"
+            allowfullscreen
+            style="width:100%; max-width:900px; height:720px; border-radius:20px; border:2px solid rgba(96,165,250,0.4); background:#fff;"
+          ></iframe>
+        </div>
+        <p class="wide-text center-text">
+          Përfto kalkulime të avancuara me kalkulatorin shkencor të integruar.
+          Përdor funksione trigonometrike, logaritme, potenciale dhe më shumë.
+        </p>
+      </section>
+
+      <section class="section highlight" id="math-importance">
+        <h2>Pse është e rëndësishme matematika?</h2>
+        <p class="wide-text center-text">
+          Matematika është gjuha universale e shkencës. Ajo zhvillon aftësitë e
+          të menduarit logjik dhe zgjidhjes së problemeve, të cilat janë të
+          nevojshme në çdo profesion dhe në jetën e përditshme.
+        </p>
+      </section>
+    </main>
+
+    <footer class="fixed-footer">
+      <p class="fixed-footer__text">
+        Gjimnazi natyror "Xhavit Ahmeti" - Gjilan
+      </p>
+      <p class="fixed-footer__text">
+        Punuar nga: Anuar Shaqiri - Olsi Sadiku - Artur Llapashtica - Norik
+        Zeqiri
+      </p>
+    </footer>
+    <script>
+      /* CURSOR GLOW */
+      const glow = document.querySelector(".cursor-glow");
+
+      document.addEventListener("mousemove", (e) => {
+        glow.style.left = e.clientX + "px";
+        glow.style.top = e.clientY + "px";
+      });
+
+      /* SIMPLE SCROLL REVEAL */
+      const sections = document.querySelectorAll(".section");
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("show");
+            }
+          });
+        },
+        { threshold: 0.15 },
+      );
+
+      sections.forEach((sec) => observer.observe(sec));
+
+      /* AI BACKGROUND PARTICLES */
+      const canvas = document.getElementById("ai-bg");
+      const ctx = canvas.getContext("2d");
+
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+
+      let particles = [];
+
+      for (let i = 0; i < 80; i++) {
+        particles.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          r: Math.random() * 2,
+          dx: (Math.random() - 0.5) * 0.6,
+          dy: (Math.random() - 0.5) * 0.6,
+        });
+      }
+
+      function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        particles.forEach((p) => {
+          p.x += p.dx;
+          p.y += p.dy;
+
+          if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
+          if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fillStyle = "rgba(96,165,250,0.5)";
+          ctx.fill();
+        });
+
+        requestAnimationFrame(animate);
+      }
+
+      animate();
+    </script>
+    <script>
+      const cards = document.querySelectorAll(".card");
+
+      cards.forEach((card) => {
+        card.addEventListener("mousemove", (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
+
+          const rotateX = ((y - centerY) / centerY) * -10;
+          const rotateY = ((x - centerX) / centerX) * 10;
+
+          card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.03)`;
+        });
+
+        card.addEventListener("mouseleave", () => {
+          card.style.transform =
+            "perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)";
+        });
+      });
+    </script>
+  </body>
+</html>
